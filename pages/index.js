@@ -3,41 +3,46 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div>
-      <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-          WM Café Build Guide
-        </h1>
-      </section>
+    <div className="container mx-auto max-w-4xl">
+      {/* Main Title */}
+      <h1 className="text-4xl font-bold mb-12 text-center">
+        WM Café Build Guide
+      </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 lg:gap-32 mb-32">
-        <div className="relative mb-8 md:mb-16">
+      {/* Image and Description Container */}
+      <div className="mb-16">
+        {/* Sketch Image */}
+        <div className="relative w-full mb-8">
           <Image
             src="/WMCafeSketch.jpg"
-            alt="Original WM Cafe Sketch"
+            alt="Original Cat Cafe Sketch"
             width={800}
             height={600}
-            className="shadow-small hover:shadow-medium transition-shadow duration-200"
+            className="rounded-lg shadow-md mx-auto"
+            priority
           />
         </div>
 
-        <div className="flex flex-col justify-center">
-          <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
+        {/* Description */}
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold mb-4">
             A Cozy Space for Cats
-          </h3>
-          <p className="text-lg leading-relaxed mb-4">
+          </h2>
+          <p className="text-lg mb-8 text-neutral-600">
             Inspired by traditional architecture and aesthetics, this build guide will help you create a perfect café hideaway for your feline friends.
           </p>
-          <div className="flex space-x-4">
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-center gap-4">
             <Link 
               href="/schematic"
-              className="bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+              className="inline-block px-6 py-3 rounded-lg bg-neutral-800 text-white hover:bg-neutral-700 transition-colors"
             >
               View Schematic
             </Link>
             <Link 
               href="/instructions"
-              className="bg-transparent hover:bg-black hover:text-white text-black font-bold py-3 px-12 lg:px-8 border border-black duration-200 transition-colors mb-6 lg:mb-0"
+              className="inline-block px-6 py-3 rounded-lg border border-neutral-800 text-neutral-800 hover:bg-neutral-50 transition-colors"
             >
               Read Instructions
             </Link>

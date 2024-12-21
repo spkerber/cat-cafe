@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
@@ -7,25 +8,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-      },
-      spacing: {
-        28: '7rem',
-      },
-      letterSpacing: {
-        tighter: '-.04em',
-      },
-      lineHeight: {
-        tight: 1.2,
-      },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+        primary: {
+          light: '#E2EBF3',  // Light sky blue
+          DEFAULT: '#7C9CB6', // Muted ocean blue
+          dark: '#2A4155',   // Deep ocean blue
+        },
+        accent: {
+          light: '#FFE8D6',  // Soft sunset glow
+          DEFAULT: '#F5A572', // Warm sunset orange
+          dark: '#B65B36',   // Deep sunset
+        },
+        neutral: {
+          50: '#F8FAFC',
+          100: '#E2EBF3',
+          200: '#C5D5E4',
+          300: '#95AFC7',
+          400: '#7C9CB6',
+          500: '#5B7A96',
+          600: '#4A6075',
+          700: '#2A4155',
+          800: '#1B2A38',
+          900: '#0F1A24',
+        },
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
 }

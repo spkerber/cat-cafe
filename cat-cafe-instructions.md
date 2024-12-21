@@ -182,4 +182,4 @@
 
 ---
 
-*Remember: Willem and Moss celebrates the beauty of imperfection. Each mark and variation adds to its character.*
+*Remember: Willem and Moss celebrate the beauty of imperfection. Each mark and variation adds to its character.*
