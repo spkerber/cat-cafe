@@ -1,5 +1,5 @@
 # Wabi-Sabi Cat Café Build Guide
-*A cozy space inspired by traditional Japanese aesthetics*
+*A cozy space inspired by traditional aesthetics*
 
 ## Materials List
 
