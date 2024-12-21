@@ -54,16 +54,30 @@ const SchematicView = ({ content }) => {
         </article>
       </div>
       
-      <style jsx global>{`
+      <style jsx>{`
         @media print {
-          body {
+          article {
             font-size: 12px;
             line-height: 1.5;
           }
-          h1 { font-size: 24px; margin-top: 24px; margin-bottom: 16px; }
-          h2 { font-size: 20px; margin-top: 20px; margin-bottom: 14px; }
-          h3 { font-size: 16px; margin-top: 16px; margin-bottom: 12px; }
-          p, ul, ol { margin-bottom: 12px; }
+          h1 {
+            font-size: 24px;
+            margin-top: 24px;
+            margin-bottom: 16px;
+          }
+          h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 14px;
+          }
+          h3 {
+            font-size: 16px;
+            margin-top: 16px;
+            margin-bottom: 12px;
+          }
+          p, ul, ol {
+            margin-bottom: 12px;
+          }
           pre {
             white-space: pre-wrap;
             font-size: 11px;
@@ -76,3 +90,14 @@ const SchematicView = ({ content }) => {
             padding: 2px 4px;
             background: #f5f5f5;
             border-radius: 2px;
+          }
+          @page {
+            margin: 2cm;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default SchematicView;
