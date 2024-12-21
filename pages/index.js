@@ -1,39 +1,24 @@
-import { promises as fs } from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { marked } from 'marked'
+import Image from 'next/image'
 
-export async function getStaticProps() {
-  // Read both markdown files
-  const instructionsPath = path.join(process.cwd(), 'cat-cafe-instructions.md')
-  const schematicPath = path.join(process.cwd(), 'cat-cafe-schematic.md')
-
-  const [instructionsContent, schematicContent] = await Promise.all([
-    fs.readFile(instructionsPath, 'utf8'),
-    fs.readFile(schematicPath, 'utf8')
-  ])
-
-  // Parse the markdown content
-  const instructions = matter(instructionsContent)
-  const schematic = matter(schematicContent)
-
-  // Convert markdown to HTML
-  const instructionsHtml = marked(instructions.content)
-  const schematicHtml = marked(schematic.content)
-
-  return {
-    props: {
-      instructions: instructionsHtml,
-      schematic: schematicHtml
-    },
-  }
-}
-
-export default function Home({ instructions, schematic }) {
+export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div dangerouslySetInnerHTML={{ __html: instructions }} />
-      <div dangerouslySetInnerHTML={{ __html: schematic }} />
+    <div className="text-center">
+      <h2 className="text-2xl text-stone-700 mb-8">Welcome to the Cat Café Build Guide</h2>
+      
+      <div className="relative w-full max-w-2xl mx-auto mb-8">
+        <Image
+          src="/WMCafeSketch.jpg"
+          alt="Original WM Cafe Sketch"
+          width={800}
+          height={600}
+          className="rounded-lg shadow-md"
+          priority
+        />
+      </div>
+      
+      <p className="mt-8 text-stone-600 max-w-xl mx-auto">
+        A cozy space inspired by traditional aesthetics, designed for our feline friends.
+      </p>
     </div>
   )
 }
