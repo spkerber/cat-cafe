@@ -49,9 +49,9 @@ const BuildInstructions = ({ content }) => {
       
       <style jsx global>{`
         @media print {
-          // ... rest of the CSS ...
-        }
-      `}</style>
+          body {
+            font-size: 12px;
+          }
           
           h1 { font-size: 24px; margin-top: 24px; margin-bottom: 16px; }
           h2 { font-size: 20px; margin-top: 20px; margin-bottom: 14px; }
