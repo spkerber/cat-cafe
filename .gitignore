@@ -59,4 +59,4 @@ logs
 .npm
 
 # Optional eslint cache
-.eslintcache
+.eslintcachenode_modules/
