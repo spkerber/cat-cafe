@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;@layer base{h1,h2,h3,h4,h5,h6,html,p{@apply leading-relaxed}}@layer components{.prose,.prose code,.prose h1,.prose h2,.prose h3,.prose li,.prose p,.prose pre,.prose ul{@apply text-sm bg-stone-100 px-1 py-0.5 rounded}}
