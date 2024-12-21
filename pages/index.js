@@ -7,7 +7,7 @@ export default function Home() {
       <h2 className="text-center text-2xl font-bold my-4">WM Café Build Guide</h2>
       <div className="flex justify-center">
         <Image
-          src="public/images/cafe-sketch.jpg" // Adjust to your image path
+          src="/images/cafe-sketch.jpg" // Adjust to your image path
           alt="WM Cafe Sketch"
           width={600}
           height={400}
