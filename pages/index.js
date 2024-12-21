@@ -1,22 +1,39 @@
-import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import Link from 'next/link';
+import { promises as fs } from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { marked } from 'marked'
 
-// ... getStaticProps stays the same ...
+export async function getStaticProps() {
+  // Read both markdown files
+  const instructionsPath = path.join(process.cwd(), 'cat-cafe-instructions.md')
+  const schematicPath = path.join(process.cwd(), 'cat-cafe-schematic.md')
 
-const BuildInstructions = ({ content }) => {
+  const [instructionsContent, schematicContent] = await Promise.all([
+    fs.readFile(instructionsPath, 'utf8'),
+    fs.readFile(schematicPath, 'utf8')
+  ])
+
+  // Parse the markdown content
+  const instructions = matter(instructionsContent)
+  const schematic = matter(schematicContent)
+
+  // Convert markdown to HTML
+  const instructionsHtml = marked(instructions.content)
+  const schematicHtml = marked(schematic.content)
+
+  return {
+    props: {
+      instructions: instructionsHtml,
+      schematic: schematicHtml
+    },
+  }
+}
+
+export default function Home({ instructions, schematic }) {
   return (
-    <div className="max-w-4xl mx-auto p-8 bg-white">
-      <nav className="mb-8 border-b">
-        <div className="flex space-x-8">
-          <Link href="/" className="px-4 py-2 text-blue-600 border-b-2 border-blue-600">Instructions</Link>
-          <Link href="/schematic" className="px-4 py-2 hover:text-gray-600">Schematic</Link>
-        </div>
-      </nav>
-      {/* Rest of your component stays the same */}
+    <div className="container mx-auto px-4 py-8">
+      <div dangerouslySetInnerHTML={{ __html: instructions }} />
+      <div dangerouslySetInnerHTML={{ __html: schematic }} />
     </div>
-  );
-};
-
-export default BuildInstructions;
+  )
+}
