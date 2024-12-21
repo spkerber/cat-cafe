@@ -1,4 +1,4 @@
-# Wabi-Sabi Cat Café Build Guide
+# WM Cat Café Build Guide
 *A cozy space inspired by traditional aesthetics*
 
 ## Materials List
@@ -182,4 +182,4 @@
 
 ---
 
-*Remember: Wabi-Sabi celebrates the beauty of imperfection. Each mark and variation adds to its character.*
+*Remember: Willem and Moss celebrates the beauty of imperfection. Each mark and variation adds to its character.*
