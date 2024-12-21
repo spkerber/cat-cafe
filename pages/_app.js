@@ -1,13 +1,11 @@
 import '../styles/globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <main className={inter.className}>
+    <Layout>
       <Component {...pageProps} />
-    </main>
+    </Layout>
   )
 }
 
